@@ -12,6 +12,15 @@ spring:
             args:
               name: service1CircuitBreaker
               fallbackUri: forward:/fallback/service1
+      - id: service-2
+        uri: lb://SERVICE-2
+        predicates:
+          - Path=/service2/**
+        filters:
+          - name: CircuitBreaker
+            args:
+              name: service1CircuitBreaker
+              fallbackUri: forward:/fallback/service2
     discovery.enabled: true
 eureka.client:
   registerWithEureka: true

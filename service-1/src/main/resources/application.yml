@@ -1,0 +1,4 @@
+server.port: 8081
+spring:
+  application.name: SERVICE-1
+  cloud.config.uri: http://localhost:8077

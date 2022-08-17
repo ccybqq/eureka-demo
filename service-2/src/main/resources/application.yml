@@ -1,4 +1,4 @@
 server.port: 8082
 spring:
   application.name: SERVICE-2
-  config.import: "configserver:http/localhost:8077"
+  config.import: "configserver:http://localhost:8077"

@@ -7,6 +7,11 @@ spring:
         uri: lb://SERVICE-1
         predicates:
           - Path=/service1/**
+        filters:
+          - name: CircuitBreaker
+            args:
+              name: service1CircuitBreaker
+              fallbackUri: forward:/fallback/service1
     discovery.enabled: true
 eureka.client:
   registerWithEureka: true
